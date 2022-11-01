@@ -47,6 +47,7 @@ void addmovie(movieDatabase& db, string title, unsigned short year, unsigned) {
 		db.movies[db.count].year;
 		db.movies[db.count].rating;
 		db.count++;
+
 	}
 	else cout << "Database is full" << endl;
 }
