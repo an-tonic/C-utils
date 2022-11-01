@@ -18,7 +18,6 @@ typedef struct movieDatabase {
 	unsigned int count = 0;
 };
 
-
 string printMovie(movie& m) {
 
 	return m.title + '\t' + std::to_string(m.year) + "\t" + std::to_string(m.rating) + "\n";
@@ -34,17 +33,13 @@ void showMovies(movieDatabase& db) {
 	else {
 		for (int i = 0; i < db.count; i++) {
 			cout << printMovie(db.movies[i]);
-		
 		}
-
 	}
-
 }
-
 
 int menu() {
 	cout << "+------------------------+" << endl;
-	cout << "| Main Menu |" << endl;
+	cout << "|Main Menu|" << endl;
 	cout << "+------------------------+" << endl;
 	cout << endl << endl;
 	cout << "1. Show List of Movies" << endl;
@@ -63,8 +58,35 @@ int menu() {
 	return choice;
 }
 
+void loadDataBase(movieDatabase& db) {
+	ifstream file("movies.csv");
 
+	string title;
+	string syear;
+	string srating;
+	unsigned short year;
+	unsigned short rating;
+
+	db.count = 0;
+
+	getline(file, title);
+
+	while (file.good()) {
+		getline(file, title, ',');
+		getline(file, syear, ',');
+		getline(file, srating, '\n');
+
+		year = stoi(syear);
+		rating = stoi(srating);
+
+		addMovie
+
+	}
+
+}
 	int main() {
+		movieDatabase db;
+
 		menu();
 		
 
