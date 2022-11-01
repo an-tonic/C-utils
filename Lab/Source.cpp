@@ -1,4 +1,7 @@
 #include <iostream>
+#include <iomanip>
+#include <string>
+#include <fstream>
 
 #define MAX 100
 
@@ -16,6 +19,13 @@ typedef struct movieDatabase {
 };
 
 
+string printMovie(movie& m) {
+
+	return m.title + '\t' + std::to_string(m.year) + "\t" + std::to_string(m.rating) + "\n";
+
+
+}
+
 void showMovies(movieDatabase& db) {
 
 	if (db.count == 0) {
@@ -23,7 +33,8 @@ void showMovies(movieDatabase& db) {
 	}
 	else {
 		for (int i = 0; i < db.count; i++) {
-			cout << db.
+			cout << printMovie(db.movies[i]);
+		
 		}
 
 	}
@@ -55,5 +66,7 @@ int menu() {
 
 	int main() {
 		menu();
+		
+
 
 	};
