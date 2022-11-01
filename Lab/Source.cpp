@@ -37,6 +37,7 @@ void showMovies(movieDatabase& db) {
 	}
 }
 
+
 int menu() {
 	cout << "+------------------------+" << endl;
 	cout << "|Main Menu|" << endl;
