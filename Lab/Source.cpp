@@ -30,6 +30,15 @@ void showMovies(movieDatabase& db) {
 
 }
 
+void addmovie(movieDatabase& db, string title, unsigned short year, unsigned) {
+	if (db.count < MAX) {
+		db.movies[db.count].title;
+		db.movies[db.count].year;
+		db.movies[db.count].rating;
+		db.count++;
+	}
+	else cout << "Database is full" << endl;
+}
 
 int menu() {
 	cout << "+------------------------+" << endl;
