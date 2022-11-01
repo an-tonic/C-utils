@@ -15,6 +15,22 @@ typedef struct movieDatabase {
 	unsigned int count = 0;
 };
 
+
+void showMovies(movieDatabase& db) {
+
+	if (db.count == 0) {
+		cout << "Empty database" << endl;
+	}
+	else {
+		for (int i = 0; i < db.count; i++) {
+			cout << db.
+		}
+
+	}
+
+}
+
+
 int menu() {
 	cout << "+------------------------+" << endl;
 	cout << "| Main Menu |" << endl;
