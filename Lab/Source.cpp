@@ -71,6 +71,7 @@ void loadDataBase(movieDatabase& db) {
 	db.count = 0;
 
 	getline(file, title);
+	
 
 	while (file.good()) {
 		getline(file, title, ',');
@@ -80,16 +81,35 @@ void loadDataBase(movieDatabase& db) {
 		year = stoi(syear);
 		rating = stoi(srating);
 
-		addMovie
 
 	}
 
 }
-	int main() {
-		movieDatabase db;
 
-		menu();
+unsigned int findMovie(movieDatabase& db, string key) {
+	//search for a movie with a title equal to the key
+	//if one is found, return the key
+	//otherwise, return -1
+	for (int i = 0; i < db.count; i++)
+		if (db.movies[i].title == key) return i;
+
+	return -1;
+}
+
+void deleteMovie(movieDatabase& db, string key) {
+	int index = findMovie(db, key);
+	if (index != -1) {
+		db.movies[index] = db.movies[db.count-1];
+		db.count--;
+	}
+
+}
+
+int main() {
+	movieDatabase db;
+
+	menu();
 		
 
 
-	};
+};
