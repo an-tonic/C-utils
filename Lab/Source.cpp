@@ -358,7 +358,7 @@ void solveMaze(MazeProblem* problem, bool debug = false) {
 
 int main()
 {
-    //srand(123456);
+  //srand(123456);
     //int* keys;
     //createRandomArray(keys, KEYS_SIZE, MIN, MAX);
     //int* array = NULL;
@@ -384,8 +384,7 @@ int main()
     cout << 13 << " to binary is "; int2Binary(13); cout << endl;
     cout << 17 << " to binary is "; int2Binary(17); cout << endl;*/
     
-
-    
+  
   /*  string test1 = "{ [ ] }";
     string test2 = "( [ { } { } [ ] ) )";
     string test3 = "( [ ] { ( ) } )";
@@ -409,7 +408,7 @@ int main()
     }*/
     
 
-    /*
+  /*
     string test1 = "a + b";                 //ab+
     string test2 = "(a + b)*c";             //ab+c*
     string test3 = "a + (b*c)";             //abc*+
@@ -426,7 +425,7 @@ int main()
     */
 
     
-   /* MazeProblem* problem;
+  /* MazeProblem* problem;
 
     problem = loadMaze("maze6_6.dat");
     solveMaze(problem);
@@ -437,8 +436,8 @@ int main()
     problem = loadMaze("maze10_16.dat");
     solveMaze(problem);*/
     
-   
-
-
+  
+    string arr[] = { "kib" "on" };
+    cout << arr[0];
 
 }

@@ -12,19 +12,23 @@ struct Node {
 
 template <typename T>
 struct List {
+
+private:
     unsigned int size = 0;
     Node<T>* head = nullptr;
-
-    bool isEmpty() {
-        return size == 0;
-    }
-
+    
     Node<T>* createNode(T newData) {
         Node<T>* newNode = new Node<T>();
         newNode->data = newData;
         newNode->next = nullptr;
         return newNode;
     }
+
+public:
+    bool isEmpty() {
+        return size == 0;
+    }
+
 
     Node<T>* find(T data) {
         for (Node<T>* tmp = head; tmp != nullptr; tmp = tmp->next) {
@@ -59,6 +63,46 @@ struct List {
         head = newNode;
         size++;
     }
+
+    void insertSorted(T newData) {
+        Node<T>* newNode = createNode(newData);
+
+        if (isEmpty()) {
+            head = newNode;
+        }
+        else if (newNode->data < head->data) {
+            newNode->next = head;
+            head = newNode;
+        }
+        else {
+
+            Node<T>* tmp = head;
+            while (tmp->next != nullptr && tmp->next->data < newNode->data) {
+                tmp = tmp->next;
+            }
+            newNode->next = tmp->next;
+            tmp->next = newNode;
+        }
+        size++;
+    }
+
+    /*void deleteNode(T data) {
+        if (!isEmpty()) {
+            if (size == 1 && head->data == data) {
+                delete head;
+                head = nullptr;
+                size--;
+            }
+            else if (size > 1) {
+                Node<T>* tmp = head;
+                while (tmp->next != nullptr && tmp->next != data) {
+                    tmp = tmp->next;
+                }
+                newNode->next = tmp->next;
+                tmp->next = newNode;
+            }
+        }
+    }*/
 
     void deleteFront() {
         if (!isEmpty()) {
@@ -118,6 +162,23 @@ struct List {
             cout << "\n";
         }
         else cout << "List is empty\n\n";
+    }
+
+   /* void appenList(List<T> extList) {
+        for (Node<T>* tmp = extList->head; tmp != nullptr; tmp = tmp->next) {
+            insertBack(temp->data);
+        }
+    }*/
+
+    List<T>* subList(int start, int end) {
+        if (isEmpty() && start <= size && end <= size && start <= end) {
+            List<T>* result = new List<T>();
+            for (int i = start; i <= end; i++) {
+                result->insertBack(access(i)->data);
+            }
+
+            return result;
+        }
     }
 
 };
