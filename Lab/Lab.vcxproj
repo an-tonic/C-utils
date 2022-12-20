@@ -140,9 +140,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Source1.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="maze10_16(1).dat" />
+    <None Include="maze6_6(1).dat" />
+    <None Include="maze6_7(1).dat" />
     <None Include="movies.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Header.h" />
+    <ClInclude Include="List.h" />
+    <ClInclude Include="Queue2stacks.h" />
+    <ClInclude Include="Queue.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
